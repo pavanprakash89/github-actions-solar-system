@@ -117,7 +117,8 @@ jobs:
               kubeconfig: '${{ secrets.KUBECONFIG }}'
           
           - name: Get Kubectl Version
-            run: kubectl version --short -o yaml
+            run: kubectl version
+            continue-on-error: true
 
           - name: Fetch NGINX INGRESS CONTROLLER IP Address 
             run: >
